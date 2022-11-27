@@ -1,0 +1,81 @@
+.get-started-btn {
+  color: $neutral-100 !important;
+  text-decoration: none !important;
+  white-space: nowrap;
+
+  @include button;
+
+  &.small {
+    width: 100%;
+    @include flexible-values((
+      prop: padding,
+      directions: (top bottom),
+      values: (13px, 13px),
+      values-lg: (14px, 14px),
+      values-sm: (12px, 12px),
+      values-xs: (15px, 15px),
+    ));
+
+    @include flexible-value((
+      prop: font-size,
+      value: 18px,
+      value-lg: 16px,
+      value-xs: 12px,
+    ));
+
+    @include flexible-value((
+      prop: line-height,
+      value: 25.38px,
+      value-lg: 22.56px,
+      value-xs: 16.92px,
+    ));
+
+    &.active {
+      background: $primary-100;
+      color: black !important;
+    }
+  }
+}
+
+.btn-show-more {
+  padding-right: 20px;
+  color: $neutral-300;
+
+  @include flexible-value((
+    prop: font-size,
+    value: 16px,
+    value-xs: 12px,
+  ));
+
+  @include flexible-value((
+    prop: line-height,
+    value: 23.52px,
+    value-xs: 16.92px,
+  ));
+
+  &:hover {
+    cursor: pointer;
+    color: $neutral-400;
+  }
+
+  &:focus {
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  svg {
+    @include flexible-value((
+      prop:  margin-left,
+      value: 14.52px,
+      value-sm: 10px,
+    ));
+
+    path {
+      fill: $neutral-300;
+    }
+  }
+
+  &:hover > svg > path {
+    fill: $neutral-400;
+  }
+}

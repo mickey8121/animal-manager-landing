@@ -1,0 +1,16 @@
+.background--grey {
+  &.blog-page {
+    .content {
+      margin-bottom: 104px;
+
+      .blog-cards {
+        row-gap: 32px;
+
+        .blog-post-preview {
+          width: 280px;
+        }
+      }
+    }
+  }
+}
+

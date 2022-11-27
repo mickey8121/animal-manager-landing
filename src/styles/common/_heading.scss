@@ -1,0 +1,40 @@
+%default-font {
+  font-family: $secondary-font;
+  font-weight: $default-font-weight;
+  white-space: pre-line;
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  @extend %default-font;
+
+  @include flexible-value((
+    prop: font-size,
+    value: 48px,
+    value-xs: 28px,
+  ));
+
+  @include flexible-value ((
+    prop: line-height,
+    value: 51.84px,
+    value-xs: 31.64px,
+  ));
+
+}
+
+.card-title {
+  @extend %default-font;
+
+  @include flexible-value((
+    prop: font-size,
+    value: 28px,
+    value-sm: 18px,
+  ));
+
+  @include flexible-value ((
+    prop: line-height,
+    value: 31.64px,
+    value-sm: 20.34px,
+  ));
+}

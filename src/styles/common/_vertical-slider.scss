@@ -1,0 +1,41 @@
+$animationSpeed: 10s;
+
+@media (max-width: 1200px) {
+  @keyframes scroll {
+    0% { transform: translateY(0); }
+    100% {
+      transform: translateY(calc(-225px * 2));
+    }
+  }
+
+  @keyframes revScroll {
+    0% { transform: translateY(calc(-225px * 2)); }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  @keyframes scroll {
+    0% { transform: translateY(0); }
+    100% {
+      transform: translateY(calc(-364px * 2));
+    }
+  }
+
+  @keyframes revScroll {
+    0% { transform: translateY(calc(-364px * 2)); }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
+
+.right-side {
+  animation: revScroll $animationSpeed linear infinite;
+}
+
+.left-side {
+  animation: scroll $animationSpeed linear infinite;
+}

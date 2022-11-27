@@ -1,0 +1,103 @@
+.manager-abilities {
+  @include flexible-value((
+    prop: padding-top,
+    value: 188px,
+    value-lg: 130px,
+    value-sm: 126px,
+    value-xs: 109px,
+  ));
+
+  .abilities-items {
+    .ability-item {
+      display: flex;
+      justify-content: space-between;
+
+      @include flexible-value((
+        prop: flex-direction,
+        value: row,
+        value-sm: column,
+      ));
+
+      .data {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        @include flexible-value((
+          prop: text-align,
+          value: left,
+          value-sm: center,
+        ));
+
+        .description {
+          white-space: pre-line;
+        }
+
+        .title {
+
+          @include flexible-value((
+            prop: padding-bottom,
+            value: 24px,
+            value-xs: 16px,
+          ));
+
+          @include flexible-value((
+            prop: text-align,
+            value: left,
+            value-sm: center,
+          ));
+
+          @include flexible-value((
+            prop: text-align,
+            value: left,
+            value-sm: center,
+          ));
+        }
+      }
+
+      .image {
+
+        @include flexible-value((
+          prop: align-self,
+          value: unset,
+          value-sm: center,
+        ));
+
+        svg {
+          height: 100%;
+          width: 100%;
+        }
+
+        @include flexible-value((
+          prop: max-width,
+          value: 664px,
+          value-lg: 501px,
+          value-sm: 532px,
+          value-xs: 300px,
+        ));
+
+        @include flexible-value((
+          prop: max-height,
+          value: 592px,
+          value-lg: 536px,
+          value-sm: 400px,
+          value-xs: 352px,
+        ));
+      }
+    }
+
+    .health {
+      @include flexible-value((
+        prop: flex-direction,
+        value: row-reverse,
+        value-sm: column,
+      ));
+
+      @include flexible-value((
+        prop: justify-content,
+        value: space-between,
+        value-sm: center,
+      ));
+    }
+  }
+}

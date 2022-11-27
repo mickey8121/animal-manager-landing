@@ -1,0 +1,126 @@
+.accessibility {
+  .accessibility-section {
+    display: grid;
+
+    @include flexible-value((
+      prop: grid-template,
+      value: 'tablet-image data' 'browser-image mobile-image',
+      value-sm: 'data data' 'tablet-image mobile-image',
+    ));
+
+    .image-container {
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .data {
+      grid-area: data;
+
+      @include flexible-value((
+        prop: text-align,
+        value: left,
+        value-sm: center,
+      ));
+
+      .title {
+
+        @include flexible-value((
+          prop: padding-bottom,
+          value: 40px,
+          value-lg: 32px,
+          value-xs: 16px,
+        ));
+      }
+
+      .description {
+
+        @include flexible-value((
+          prop: padding-bottom,
+          value: 24px,
+          value-lg: 16px,
+          value-xs: 8px,
+        ));
+      }
+
+      &.text--overlap {
+        padding-top: 30px;
+
+        @include flexible-value((
+          prop: margin-right,
+          value: 70px,
+          value-sm: unset,
+        ));
+      }
+    }
+
+    .tablet-image {
+      grid-area: tablet-image;
+
+      @include flexible-value((
+        prop: max-width,
+        value: 682px,
+        value-lg: 579px,
+        value-sm: 540px,
+        value-xs: 269px,
+      ));
+
+      @include flexible-value((
+        prop: max-height,
+        value: 565px,
+        value-lg: 480px,
+        value-sm: 430px,
+        value-xs: 230px,
+      ));
+    }
+
+    .mobile-image {
+      grid-area: mobile-image;
+
+      @include flexible-value((
+        prop: margin-top,
+        value: unset,
+        value-sm: auto,
+      ));
+
+      @include flexible-value((
+        prop: max-width,
+        value: 366px,
+        value-lg: 370px,
+        value-sm: 280px,
+        value-xs: 140px,
+      ));
+
+      @include flexible-value((
+        prop: max-height,
+        value: 546px,
+        value-lg: 556px,
+        value-sm: 432px,
+        value-xs: 216px,
+      ));
+    }
+
+    .browser-image {
+      grid-area: browser-image;
+
+      @include flexible-value((
+        prop: display,
+        value: unset,
+        value-sm: none,
+      ));
+
+      @include flexible-value((
+        prop: max-width,
+        value: 838px,
+        value-lg: 834px,
+      ));
+
+      @include flexible-value((
+        prop: max-height,
+        value: 651px,
+        value-lg: 563px,
+      ));
+    }
+  }
+}

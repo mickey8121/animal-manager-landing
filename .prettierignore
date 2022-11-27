@@ -1,0 +1,9 @@
+node_modules
+build
+public
+dist
+res
+coverage
+tsconfig.json
+config-overrides.js
+src/styles

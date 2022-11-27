@@ -1,0 +1,90 @@
+.agreements {
+  max-width: 592px;
+
+  @include flexible-values((
+    prop: margin,
+    directions: (top right bottom left),
+    values: (132px auto 170px 192px),
+    values-lg: (132px auto 170px auto),
+  ));
+
+  .responsive-title-1 {
+    margin-bottom: 32px !important;
+
+    @extend %default-font;
+
+    @include flexible-value((
+      prop: font-size,
+      value: 48px,
+      value-xs: 28px,
+    ));
+
+    @include flexible-value ((
+      prop: line-height,
+      value: 51.84px,
+      value-xs: 31.64px,
+    ));
+  }
+
+  p {
+    font-weight: $default-font-weight;
+    margin: 0;
+    padding: 0;
+
+    @include flexible-value((
+      prop: font-size,
+      value: 16px,
+      value-sm: 12px,
+    ));
+
+    @include flexible-value((
+      prop: line-height,
+      value: 23.52px,
+      value-sm: 16.92px,
+    ));
+  }
+
+  h3, h4 {
+    font-weight: $default-font-weight;
+    font-family: $secondary-font;
+    line-height: 23.52px;
+    margin: 32px 0 16px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  ol {
+    counter-reset: list1;
+
+    li {
+      position: relative;
+      font-weight: 700;
+      line-height: 30px;
+      margin: 0 0 8px;
+      list-style-type: none;
+      list-style-position: inside;
+    }
+
+    li:before {
+      position: absolute;
+      width: 20px;
+      height: 30px;
+      line-height: 30px;
+      left: -40px;
+      padding: 0 5px;
+      text-align: center;
+      counter-increment: list1;
+      content: counter(list1) ".";
+    }
+
+    ol {
+      counter-reset: list2;
+      li:before {
+        counter-increment: list2;
+        content: counter(list1) "." counter(list2) "";
+      }
+    }
+  }
+}

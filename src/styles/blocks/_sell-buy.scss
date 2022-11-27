@@ -1,0 +1,123 @@
+@mixin white-gradient {
+  background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+}
+
+.manager-alpaca-sell {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  @include flexible-values((
+    prop: padding,
+    directions: (top bottom),
+    values: (114px, 119px),
+    values-lg: (69px, 100px),
+    values-sm: (40px, 96px),
+    values-xl: (32px, 72px),
+  ));
+
+  @include flexible-value((
+    prop: flex-direction,
+    value: row,
+    value-sm: column,
+  ));
+
+  .data {
+    row-gap: 24px;
+
+    .title {
+      @include flexible-value((
+        prop: padding-bottom,
+        value: 24px,
+        value-xs: 16px,
+      ));
+    }
+
+    .description {
+      @include flexible-value((
+        prop: padding-bottom,
+        value: 0,
+        value-sm: 40px,
+        value-xs: 32px,
+      ));
+    }
+
+    @include flexible-value((
+      prop: text-align,
+      value: left,
+      value-sm: center,
+    ));
+  }
+
+  .animal-cards {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+
+    &::before,
+    &::after {
+      @include white-gradient;
+      position: absolute;
+      z-index: 2;
+      content: "";
+
+      @include flexible-value((
+        prop: height,
+        value: 150px,
+        value-lg: 150px,
+      ));
+
+      @include flexible-value((
+        prop: width,
+        value: 275px,
+        value-lg: 140px,
+      ));
+    }
+
+    &::after {
+      right: 0;
+      bottom: 0;
+      transform: rotateZ(180deg);
+    }
+
+    @import '../common/vertical-slider';
+
+    .animal {
+      @include flexible-value((
+        prop: width,
+        value: 280px,
+        value-lg: 144px,
+      ));
+
+      @include flexible-value((
+        prop: height,
+        value: 364px,
+        value-lg: 225px,
+      ));
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    @include flexible-value((
+      prop: max-width,
+      value: 592px,
+      value-lg: 370px,
+      value-sm: 312px,
+      value-xs: 300px,
+    ));
+
+    @include flexible-value((
+      prop: max-height,
+      value: 848px,
+      value-lg: 556px,
+      value-sm: 498px,
+      value-xs: 452px,
+    ));
+  }
+
+}

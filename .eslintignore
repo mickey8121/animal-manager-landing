@@ -1,0 +1,5 @@
+gatsby-config.js
+gatsby-node.js
+scripts/write-env-scss.js
+.lintstagedrc.js
+src/@types/block-content-to-react.d.ts

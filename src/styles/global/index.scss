@@ -1,0 +1,44 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: $neutral-500;
+}
+
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+  min-height:100vh;
+  overflow:auto;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  .content {
+    height: 100%;
+  }
+
+  flex: 1 0 auto;
+}
+
+footer {
+  flex: 0 0 auto;
+}
+
+img {
+  width: 100%;
+}
+

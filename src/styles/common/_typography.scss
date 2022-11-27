@@ -1,0 +1,45 @@
+%default-font-description {
+  font-weight: $default-font-weight;
+  white-space: pre-line;
+  margin: 0;
+  padding: 0;
+}
+
+.description {
+  @extend %default-font-description;
+
+  @include flexible-value((
+    prop: font-size,
+    value: 20px,
+    value-lg: 16px,
+    value-xs: 12px,
+  ));
+
+  @include flexible-value((
+    prop: line-height,
+    value: 28.2px,
+    value-lg: 23.52px,
+    value-xs: 16.92px,
+  ));
+}
+
+.card-description {
+  @extend %default-font-description;
+
+  @include flexible-value((
+    prop: font-size,
+    value: 16px,
+    value-sm: 12px,
+  ));
+
+  @include flexible-value((
+    prop: line-height,
+    value: 23.52px,
+    value-sm: 16.92px,
+  ));
+
+}
+
+span {
+  @include body-typography;
+}

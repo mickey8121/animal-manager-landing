@@ -1,0 +1,31 @@
+$neutral-500: #0c211a;
+$neutral-400: #818181;
+$neutral-300: #c2c2c2;
+$neutral-200: #dedede;
+$neutral-100: #ffffff;
+
+$default-font-weight: 400;
+$bold-font-weight: 600;
+
+$font-family-base: 'Inter', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto',
+  'Helvetica Neue', 'Arial', 'Noto Sans', 'Liberation Sans', 'sans-serif', 'Apple Color Emoji',
+  'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+$primary-font: 'Inter';
+$secondary-font: 'DM Serif';
+$roboto-font: 'Roboto';
+
+@font-face {
+  font-family: 'DM Serif';
+  src: local('DM Serif'), url('fonts/DM-Serif-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: local('Inter'), url('fonts/Inter-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto'), url('fonts/Roboto-Regular.ttf') format('truetype');
+}

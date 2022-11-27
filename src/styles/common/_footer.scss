@@ -1,0 +1,38 @@
+footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  border-top: 1px solid $primary-300;
+
+  @include flexible-value((
+    prop: column-gap,
+    value: 40px,
+    value-lg: 32px,
+    value-sm: 40px,
+    value-xs: 24px,
+  ));
+
+  @include flexible-value((
+    prop: padding-top,
+    value: 48px,
+    value-lg: 32px,
+    value-xs: 24px,
+  ));
+
+  a {
+    color: $neutral-500 !important;
+    text-decoration: none;
+    white-space: nowrap;
+
+    @include link-typography;
+  }
+
+  @include flexible-value((
+    prop: height,
+    value: 112px,
+    value-lg: 81px,
+    value-sm: 208px,
+    value-xs: 64px,
+  ));
+}

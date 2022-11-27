@@ -1,0 +1,27 @@
+.call-to-action {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include flexible-values((
+    prop: padding,
+    directions: (top bottom),
+    values: (152px, 152px),
+    values-lg: (128px, 105px),
+    values-sm: (96px, 81px),
+    values-xs: (72px, 61px),
+  ));
+
+  .title,
+  .description {
+    text-align: center;
+
+    @include flexible-value((
+      prop: padding-bottom,
+      value: 32px,
+      value-sm: 24px,
+      value-xs: 16px
+    ));
+  }
+}

@@ -1,0 +1,176 @@
+.manager-pricing {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  .title {
+    margin: 152px 0 72px;
+    text-align: center;
+
+    @include flexible-values((
+      prop: margin,
+      directions: (top bottom),
+      values: (152px, 72px),
+      values-lg: (128px, 43px),
+      values-sm: (96px, 44px),
+      values-xs: (72px, 40px),
+    ));
+
+    @include flexible-value((
+      prop: margin-bottom,
+      value: 72px,
+      value-lg: 43px,
+      value-sm: 44px,
+      value-xs: 40px,
+    ));
+  }
+
+  .pricing-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 10px;
+
+    @include flexible-value((
+      prop: justify-content,
+      value: space-between,
+      value-lg: space-around,
+      value-xs: center,
+    ));
+
+    .pricing-block {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+
+      @include flexible-value((
+        prop: max-width,
+        value: 280px,
+        value-lg: 215px,
+        value-sm: 300px,
+      ));
+
+      .pricing-card {
+        box-shadow: 0 6px 14px -6px rgba(0, 75, 255, 0.12), 0px 10px 32px -4px rgba(0, 16, 53, 0.1);
+        background: $primary-100;
+
+        &.active {
+          background: $primary-400;
+          color: $primary-100;
+
+          .card-title,
+          .tariff-plan,
+          .card-description {
+            color: $primary-100;
+          }
+        }
+
+        @include flexible-value((
+          prop: border-radius,
+          value: 24px,
+          value-lg: 16px,
+        ));
+
+        @include flexible-value((
+          prop: max-height,
+          value: 324px,
+          value-lg: 293px,
+          value-sm: 218px,
+        ));
+
+        @include flexible-values((
+          prop: padding,
+          directions: (top right bottom left),
+          values: (32px, 32px, 32px, 32px),
+          values-lg: (24px, 16px, 16px, 16px),
+          values-sm: (24px, 16px, 16px, 16px),
+        ));
+
+        .tariff-plan {
+          font-family: $roboto-font;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 20px;
+        }
+
+        .card-title {
+          font-family: $secondary-font;
+          font-weight: 400;
+
+          @include flexible-value((
+            prop: font-size,
+            value: 24px,
+            value-lg: 18px,
+          ));
+
+          @include flexible-value((
+            prop: line-height,
+            value: 27.12px,
+            value-lg: 20.34px,
+          ));
+
+          @include flexible-values((
+            prop: margin,
+            directions: (top bottom),
+            values: (8px, 32px),
+            values-sm: (8px, 16px),
+          ));
+        }
+
+        .card-description {
+          font-family: $font-family-base;
+          font-weight: 400;
+
+          @include flexible-value((
+            prop: font-size,
+            value: 16px,
+            value-sm: 12px,
+          ));
+
+          @include flexible-value((
+            prop: line-height,
+            value: 23.52px,
+            value-sm: 16.92px,
+          ));
+
+          @include flexible-value((
+            prop: margin-bottom,
+            value: 49px,
+            value-sm: 32px,
+          ));
+        }
+      }
+
+      .pricing-card-details {
+        @include flexible-value((
+          prop: display,
+          value: block,
+          value-sm: none,
+        ));
+
+        margin-top: 48px;
+
+        ul {
+          list-style: inside url('/icons/check-icon.svg');
+
+          li {
+            margin-bottom: 24px;
+
+            &.inherited-abilities {
+              list-style: inside url('/icons/arrow-icon.svg');
+            }
+
+            span {
+              margin-left: 7px;
+              color: $neutral-400;
+              font-family: $roboto-font;
+              font-size: 16px;
+              line-height: 20px;
+              overflow-wrap: break-word;
+            }
+          }
+        }
+      }
+    }
+  }
+}

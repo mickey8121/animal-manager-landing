@@ -1,0 +1,172 @@
+//@media (max-width: 1600px) {
+//
+//}
+
+@keyframes slideAnimation {
+  0% { transform: translateX(238px); opacity: 0; }
+  15% { transform: translateX(-50px); opacity: 1; }
+  25% { transform: translateX(0) }
+  75% { transform: translateX(0) }
+  85% { transform: translateX(50px); opacity: 1;}
+  100% { transform: translateX(-238px); opacity: 0; }
+}
+
+.container-for-slider {
+  position: absolute;
+  // padding: 100px;
+  // overflow: hidden;
+  @include flexible-value((
+    prop: left,
+    value: calc(50vw - 200px), // left: calc(50vw - 269px); // 269px = 100px + half of item width
+    value-lg: calc(50vw - 150px),
+    value-sm: calc(50vw - 100px), // for calc: 100px - padding of ul.alice-carousel__stage
+  ));
+
+  @include flexible-value((
+    prop: top,
+    value: calc(50vw - 50px), // top: calc(50vw - 156px); // 156px = 100px + half of item height
+    value-sm: calc(200vw - 30px), // for calc: 100px - padding of ul.alice-carousel__stage
+  ));
+
+  .card-feature {
+
+    display: flex;
+    //@include flexible-value((
+    //  prop: width,
+    //  value: 800px,
+    //  value-lg: 600px,
+    //  value-sm: 330px,
+    //));
+
+    .item-container {
+      // animation: slideAnimation 2s linear infinite;
+      //animation: slideEnd 3s linear infinite;
+
+      //&.active {
+      //  animation: slideStart 3s linear infinite;
+      //}
+
+      position: relative;
+      .item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        //margin-right: 200px;
+        //margin-left: 200px;
+        box-shadow: 0 8px 18px rgba(24, 39, 75, 0.04), 0 12px 42px rgba(24, 39, 75, 0.04);
+        background-color: $neutral-100;
+
+        @include border-radius-default;
+
+        .icon {
+          svg {
+            @include flexible-value((
+              prop: height,
+              value: 80px,
+              value-lg: 66px,
+              value-sm: 48px,
+            ));
+
+            @include flexible-value((
+              prop: width,
+              value: 80px,
+              value-lg: 56px,
+              value-sm: 48px,
+            ));
+          }
+        }
+
+        p {
+          margin-bottom: 0;
+
+          @include body-typography;
+        }
+
+        @include flexible-value((
+          prop: width,
+          value: 338px,
+          value-lg: 256px,
+          value-sm: 203px,
+        ));
+
+        @include flexible-value((
+          prop: height,
+          value: 112px,
+          value-lg: 86px,
+          value-sm: 68px,
+        ));
+
+        @include flexible-values((
+          prop: padding,
+          directions: (top right bottom left),
+          values: (16px, 16px, 16px, 16px),
+          values-lg: (14px, 14px, 16px, 16px),
+          values-xs: (10px, 10px, 10px, 10px),
+        ));
+
+        @include flexible-value((
+          prop: column-gap,
+          value: 24px,
+          value-lg: 16px,
+          value-sm: 12px,
+        ));
+      }
+
+      .badge {
+        position: absolute;
+        color: $neutral-100;
+
+        @include flexible-value((
+          prop: left,
+          value: 270px,
+          value-lg: 200px,
+          value-sm: 150px,
+        ));
+
+        @include flexible-value((
+          prop: top,
+          value: -10px,
+          value-xs: -12px,
+        ));
+
+        .soon {
+          background-color: $primary-yellow;
+          border-radius: 8px;
+          font-size: 12px;
+          line-height: 16.92px;
+
+          @include flexible-values((
+            prop: padding,
+            directions: (top right bottom left),
+            values: (2px, 8px, 2px, 8px),
+            values-lg: (2px, 4px, 2px, 4px),
+            values-xs: (1.4px, 4px, 0.5px, 4px),
+          ));
+        }
+
+        .new {
+          z-index: 9999;
+          background-color: $primary-red;
+          border-radius: 8px;
+          font-size: 12px;
+          line-height: 16.92px;
+
+          @include flexible-values((
+            prop: padding,
+            directions: (top right bottom left),
+            values: (2px, 8px, 2px, 8px),
+            values-lg: (2px, 4px, 2px, 4px),
+            values-xs: (1.4px, 4px, 0.5px, 4px),
+          ));
+        }
+
+        @include flexible-value((
+          prop: width,
+          value: 52px,
+          value-lg: 32px,
+          value-sm: 32px,
+        ));
+      }
+    }
+  }
+}
